@@ -12,8 +12,20 @@
     tools:context="com.kantor.sam.borderwaittimes.MainActivity"
     tools:showIn="@layout/activity_main">
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/textView1"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_toRightOf="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="update"
+        android:id="@+id/refreshButton"
+        android:onClick="update" />
 </RelativeLayout>

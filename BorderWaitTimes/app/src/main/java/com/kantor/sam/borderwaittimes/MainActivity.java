@@ -8,6 +8,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.kantor.sam.borderwaittimes.Parser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,4 +53,14 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    public void update (View v) throws Exception
+    {
+        Parser ps = new Parser();
+        ps.getXMLelementsfromURL();
+        Toast toast = Toast.makeText(getApplicationContext(), ps.Bridge1_time, Toast.LENGTH_LONG); // testing
+
+        TextView textView = (TextView)findViewById(R.id.textView1);
+        textView.setText(ps.Bridge1_time);
+    }
+
 }
