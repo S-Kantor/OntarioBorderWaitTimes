@@ -1,5 +1,6 @@
 package com.kantor.sam.borderwaittimes;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -45,19 +46,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void update (View v) throws Exception
     {
-        Parser ps = new Parser();
+        Parser ps = new Parser(this);
         ps.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         //Toast toast = Toast.makeText(getApplicationContext(), ps.Bridge1_time, Toast.LENGTH_LONG); // testing
-
-        TextView textView = (TextView)findViewById(R.id.textView1);
-        TextView textView2 = (TextView)findViewById(R.id.textView2);
-        TextView textView3 = (TextView)findViewById(R.id.textView3);
-        textView.setText(ps.Bridge1_time);
-        textView2.setText(ps.Bridge2_time);
-        textView3.setText(ps.Bridge3_time);
-        invalidateOptionsMenu();
-
-        Toast toast = Toast.makeText(getApplicationContext(), "Updating", Toast.LENGTH_SHORT);
     }
-
 }
