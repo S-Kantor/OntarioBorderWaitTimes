@@ -18,11 +18,11 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
-        android:id="@+id/textView1"
+        android:id="@+id/Bridge_1"
         android:layout_gravity="center_horizontal" />
 
     <Button
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_toRightOf="@+id/Bridge_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="update"
