@@ -1,26 +1,38 @@
 package com.kantor.sam.borderwaittimes;
 
-import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.kantor.sam.borderwaittimes.Parser;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String PREFS_NAME = "MyPrefsFile"; // Used for Storing Variables
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        String Bridge1_Time = "no delay";
+        String Bridge2_Time = "no delay";
+        String Bridge3_Time = "no delay";
+
+        // Restoring Variables (Last Bridge Time)
+        SharedPreferences Bridge_Times = getSharedPreferences(PREFS_NAME, 0);
+        Bridge1_Time = Bridge_Times.getString("Bridge_1", Bridge1_Time);
+        Bridge2_Time = Bridge_Times.getString("Bridge_2", Bridge2_Time);
+        Bridge3_Time = Bridge_Times.getString("Bridge_3", Bridge3_Time);
+        setBridge1_Time(Bridge1_Time);
+        setBridge2_Time(Bridge2_Time);
+        setBridge3_Time(Bridge3_Time);
     }
 
     @Override
