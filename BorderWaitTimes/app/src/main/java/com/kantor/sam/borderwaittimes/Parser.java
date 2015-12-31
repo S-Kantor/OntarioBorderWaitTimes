@@ -64,15 +64,15 @@ public class Parser extends AsyncTask <Void, Void, Void>
                  {
                      if (Bridge_Name.equals("Lewiston Bridge"))
                      {
-                         Bridge1_time = nodeChildList.item(7).getChildNodes().item(1).getChildNodes().item(1).getTextContent();
+                         Bridge1_time = nodeChildList.item(8).getChildNodes().item(1).getChildNodes().item(1).getTextContent();
                      }
                      else if (Bridge_Name.equals("Peace Bridge"))
                      {
-                         Bridge2_time = nodeChildList.item(7).getChildNodes().item(1).getChildNodes().item(1).getTextContent();
+                         Bridge2_time = nodeChildList.item(8).getChildNodes().item(1).getChildNodes().item(1).getTextContent();
                      }
                      else if (Bridge_Name.equals("Rainbow Bridge"))
                      {
-                         Bridge3_time = nodeChildList.item(7).getChildNodes().item(1).getChildNodes().item(1).getTextContent();
+                         Bridge3_time = nodeChildList.item(8).getChildNodes().item(1).getChildNodes().item(1).getTextContent();
                      }
                      Log.i("Bridge Name: ", Bridge_Name); // debugging
                  }
