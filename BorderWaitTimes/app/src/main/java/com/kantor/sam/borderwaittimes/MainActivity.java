@@ -50,4 +50,49 @@ public class MainActivity extends AppCompatActivity {
         ps.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         //Toast toast = Toast.makeText(getApplicationContext(), ps.Bridge1_time, Toast.LENGTH_LONG); // testing
     }
+
+    @Override
+    protected  void onStop()
+    {
+        super.onStop();
+
+        // Commit Save Changes
+        SharedPreferences prefs = getSharedPreferences("preference_file_name", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("Bridge_1", getBridge1());
+        editor.putString("Bridge_2", getBridge2());
+        editor.putString("Bridge_3", getBridge3());
+        editor.apply();
+    }
+
+    public String getBridge1()
+    {
+        TextView tmp = (TextView)findViewById(R.id.Bridge_1);
+        return tmp.toString();
+    }
+    public String getBridge2()
+    {
+        TextView tmp = (TextView)findViewById(R.id.Bridge_2);
+        return tmp.toString();
+    }
+    public String getBridge3()
+    {
+        TextView tmp = (TextView)findViewById(R.id.Bridge_3);
+        return tmp.toString();
+    }
+    public void setBridge1_Time(String string)
+    {
+        TextView tmp = (TextView)findViewById(R.id.Bridge_1);
+        tmp.setText(string);
+    }
+    public void setBridge2_Time(String string)
+    {
+        TextView tmp = (TextView)findViewById(R.id.Bridge_2);
+        tmp.setText(string);
+    }
+    public void setBridge3_Time(String string)
+    {
+        TextView tmp = (TextView)findViewById(R.id.Bridge_3);
+        tmp.setText(string);
+    }
 }
