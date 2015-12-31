@@ -38,9 +38,9 @@ public class Parser extends AsyncTask <Void, Void, Void>
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        Bridge1_time = "Not operational";
-        Bridge2_time = "Not operational";
-        Bridge3_time = "Not operational";
+        Bridge1_time = "Updating";
+        Bridge2_time = "Updating";
+        Bridge3_time = "Updating";
     }
 
     @Override
@@ -52,7 +52,7 @@ public class Parser extends AsyncTask <Void, Void, Void>
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document doc = db.parse(new InputSource(url.openStream()));
-            //doc.getDocumentElement().normalize();
+            doc.getDocumentElement().normalize();
 
             NodeList nodeList = doc.getElementsByTagName("port");
             for (int i = 0; i < nodeList.getLength(); i++)
@@ -87,12 +87,29 @@ public class Parser extends AsyncTask <Void, Void, Void>
         return null;
     }
 
+    protected void setStatus ()
+    {
+        if (Bridge1_time.equals(""))
+        {
+            Bridge1_time = "Not operational";
+        }
+        else if (Bridge2_time.equals(""))
+        {
+            Bridge2_time = "Not operational";
+        }
+        else if (Bridge3_time.equals(""))
+        {
+            Bridge3_time = "Not operational";
+        }
+    }
+
     protected void onPostExecute(Void result)
     {
         super.onPostExecute(result);
-        Bridge1_time = "Delay is: " + Bridge1_time;
-        Bridge2_time = "Delay is: " + Bridge2_time;
-        Bridge3_time = "Delay is: " + Bridge3_time;
+        setStatus();
+        Bridge1_time = "Delay for Lewiston Bridge is: " + Bridge1_time;
+        Bridge2_time = "Delay for Peace Bridge is: " + Bridge2_time;
+        Bridge3_time = "Delay for Rainbow Bridge is: " + Bridge3_time;
         TextView textView = (TextView)mActivity.findViewById(R.id.textView1);
         TextView textView2 = (TextView)mActivity.findViewById(R.id.textView2);
         TextView textView3 = (TextView)mActivity.findViewById(R.id.textView3);
