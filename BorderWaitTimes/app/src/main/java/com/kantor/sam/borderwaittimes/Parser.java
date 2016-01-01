@@ -2,7 +2,6 @@ package com.kantor.sam.borderwaittimes;
 
 import android.app.Activity;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.TextView;
 
 import org.w3c.dom.Document;
@@ -15,14 +14,12 @@ import java.net.URL;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-
 /**
  * Created by sam on 12/30/2015.
  */
 
 public class Parser extends AsyncTask <Void, Void, Void>
 {
-
     Activity mActivity;
 
     public Parser(Activity activity) {
