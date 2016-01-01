@@ -54,25 +54,33 @@ public class Parser extends AsyncTask <Void, Void, Void>
             {
                 Node nNode = nodeList.item(i);
                 NodeList nodeChildList = nNode.getChildNodes();
-                String Bridge_Name = nodeChildList.item(3).getTextContent();
-                String Crossing_name = nodeChildList.item(3).getNodeName();
-                String asdd = nodeChildList.item(3).getChildNodes().item(0).getNodeValue(); // used for debugging
+                String Bridge_Name = nodeChildList.item(3).getTextContent(); // Debugging
+                String Crossing_name = nodeChildList.item(3).getNodeName(); // Debugging
+                //String asdd = nodeChildList.item(3).getChildNodes().item(0).getNodeValue(); // used for debugging
                  if (Crossing_name.equals("crossing_name"))
                  {
                      if (Bridge_Name.equals("Lewiston Bridge"))
                      {
-                         Bridge1_time = nodeChildList.item(8).getChildNodes().item(1).getChildNodes().item(1).getTextContent();
+                         String tempDelay = nodeChildList.item(8).getChildNodes().item(1).getChildNodes().item(1).getTextContent();
+                         String tempMinutes = nodeChildList.item(8).getChildNodes().item(1).getChildNodes().item(2).getChildNodes().item(0).getNodeValue();
+                         Bridge1_time = setDelayStatus(tempDelay, tempMinutes);
                      }
                      else if (Bridge_Name.equals("Peace Bridge"))
                      {
-                         Bridge2_time = nodeChildList.item(8).getChildNodes().item(1).getChildNodes().item(1).getTextContent();
+                         String tempDelay = nodeChildList.item(8).getChildNodes().item(1).getChildNodes().item(1).getTextContent();
+                         String tempMinutes = nodeChildList.item(8).getChildNodes().item(1).getChildNodes().item(2).getChildNodes().item(0).getNodeValue();
+                         Bridge2_time = setDelayStatus(tempDelay, tempMinutes);
                      }
                      else if (Bridge_Name.equals("Rainbow Bridge"))
                      {
-                         Bridge3_time = nodeChildList.item(8).getChildNodes().item(1).getChildNodes().item(1).getTextContent();
+                         String tempDelay = nodeChildList.item(8).getChildNodes().item(1).getChildNodes().item(1).getTextContent();
+                         String tempMinutes = nodeChildList.item(8).getChildNodes().item(1).getChildNodes().item(2).getChildNodes().item(0).getNodeValue();
+                         Bridge3_time = setDelayStatus(tempDelay, tempMinutes);
+                         //Log.i("Bridge Name: ", Bridge_Name); // debugging
                      }
-                     Log.i("Bridge Name: ", Bridge_Name); // debugging
                  }
+                //Log.i("Delay Info: ",  nodeChildList.item(8).getChildNodes().item(1).getChildNodes().item(1).getTextContent());
+                //Log.i("Crossing Name: ", Crossing_name);
             }
         }
         catch (Exception e)
@@ -80,6 +88,18 @@ public class Parser extends AsyncTask <Void, Void, Void>
             e.printStackTrace();
         }
         return null;
+    }
+
+    protected String setDelayStatus(String status, String minutes)
+    {
+        if (status.equals("no delay"))
+        {
+            return "no delay";
+        }
+        else
+        {
+            return "delay is: " + minutes + " minutes";
+        }
     }
 
     protected void setStatus ()
