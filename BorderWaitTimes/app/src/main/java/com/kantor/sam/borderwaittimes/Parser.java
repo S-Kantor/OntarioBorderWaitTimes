@@ -125,9 +125,11 @@ public class Parser extends AsyncTask <Void, Void, Void>
         Bridge1_time = "Delay for Lewiston Bridge is: " + Bridge1_time;
         Bridge2_time = "Delay for Peace Bridge is: " + Bridge2_time;
         Bridge3_time = "Delay for Rainbow Bridge is: " + Bridge3_time;
+
         TextView textView = (TextView)mActivity.findViewById(R.id.Bridge_1);
         TextView textView2 = (TextView)mActivity.findViewById(R.id.Bridge_2);
         TextView textView3 = (TextView)mActivity.findViewById(R.id.Bridge_3);
+
         textView.setText(Bridge1_time);
         textView2.setText(Bridge2_time);
         textView3.setText(Bridge3_time);
