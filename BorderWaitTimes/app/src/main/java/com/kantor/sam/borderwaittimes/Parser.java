@@ -96,9 +96,13 @@ public class Parser extends AsyncTask <Void, Void, Void>
         {
             return "no delay";
         }
+        else if (status.equals("delay"))
+        {
+            return minutes + " minutes";
+        }
         else
         {
-            return "delay is: " + minutes + " minutes";
+            return "Not operational";
         }
     }
 
