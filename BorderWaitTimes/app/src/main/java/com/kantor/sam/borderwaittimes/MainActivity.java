@@ -14,8 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String PREFS_NAME = "MyPrefsFile"; // Used for Storing Variables
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
