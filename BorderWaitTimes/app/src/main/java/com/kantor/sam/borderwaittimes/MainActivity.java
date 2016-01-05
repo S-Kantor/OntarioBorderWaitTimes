@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putString("Bridge_1", getBridge1());
         editor.putString("Bridge_2", getBridge2());
         editor.putString("Bridge_3", getBridge3());
-        editor.apply();
+        editor.commit();
     }
 
     public String getBridge1()
