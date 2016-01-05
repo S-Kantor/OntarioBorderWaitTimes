@@ -22,7 +22,8 @@ public class Parser extends AsyncTask <Void, Void, Void>
 {
     Activity mActivity;
 
-    public Parser(Activity activity) {
+    public Parser(Activity activity)
+    {
         mActivity = activity;
     }
 
