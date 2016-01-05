@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     public static final String PREFS_NAME = "MyPrefsFile"; // Used for Storing Variables
+    Display dp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,5 +105,17 @@ public class MainActivity extends AppCompatActivity {
     {
         TextView tmp = (TextView)findViewById(R.id.Bridge_3);
         tmp.setText(string);
+    }
+    public void setQLDelay()
+    {
+        dp.setDelayQueenston(getBridge1());
+    }
+    public void setRainbowDelay()
+    {
+        dp.setDelayQueenston(getBridge2());
+    }
+    public void setPeaceDelay()
+    {
+        dp.setDelayQueenston(getBridge3());
     }
 }
