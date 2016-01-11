@@ -2,4 +2,7 @@
     <string name="app_name">BorderWaitTimes</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_image_view">imageView</string>
+    <string name="queenPopup">Queenston Lewiston</string>
+    <string name="peacePopup">Peace</string>
+    <string name="rainbowPopup">Rainbow</string>
 </resources>
