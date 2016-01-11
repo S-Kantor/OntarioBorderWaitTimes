@@ -1,6 +1,7 @@
 package com.kantor.sam.borderwaittimes;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -56,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         snackbar.show();
         switch (item.getItemId()) {
             case R.id.queenstonBridgepop:
+                Intent intent = new Intent(this, QueenstonActivity.class);
+                intent.putExtra("Bridge_Time", getBridge1());
+                startActivity(intent);
                 snackbar.show();
                 return true;
 
