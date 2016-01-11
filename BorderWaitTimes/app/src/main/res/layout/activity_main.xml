@@ -11,6 +11,14 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.kantor.sam.borderwaittimes.MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,8 +27,9 @@
         android:text="Large Text"
         android:id="@+id/Bridge_1"
         android:layout_gravity="center_horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="false"
+        android:layout_alignStart="@+id/Bridge_3"
+        android:layout_marginTop="60dp" />
 
     <Button
         android:layout_width="wrap_content"
