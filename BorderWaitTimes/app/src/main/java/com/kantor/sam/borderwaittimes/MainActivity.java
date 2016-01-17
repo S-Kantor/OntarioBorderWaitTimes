@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         //getMenuInflater().inflate(R.menu.menu_main, menu);
-        getMenuInflater().inflate(R.menu.actionbutton, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -54,9 +54,8 @@ public class MainActivity extends AppCompatActivity {
         Snackbar snackbar = Snackbar
                 .make(this.findViewById(android.R.id.content),  "You clicked a button", Snackbar.LENGTH_LONG);
 
-        snackbar.show();
         switch (item.getItemId()) {
-            case R.id.queenstonBridgepop:
+            /*case R.id.queenstonBridgepop:
                 Intent intent = new Intent(this, QueenstonActivity.class);
                 intent.putExtra("Bridge_Time", getBridge1());
                 startActivity(intent);
@@ -68,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.peaceBridgepop:
                 snackbar.show();
-                return true;
+                return true;*/
 
             default:
                 // If we got here, the user's action was not recognized.
@@ -127,17 +126,5 @@ public class MainActivity extends AppCompatActivity {
     {
         TextView tmp = (TextView)findViewById(R.id.Bridge_3);
         tmp.setText(string);
-    }
-    public void setQLDelay()
-    {
-        dp.setDelayQueenston(getBridge1());
-    }
-    public void setRainbowDelay()
-    {
-        dp.setDelayQueenston(getBridge2());
-    }
-    public void setPeaceDelay()
-    {
-        dp.setDelayQueenston(getBridge3());
     }
 }
