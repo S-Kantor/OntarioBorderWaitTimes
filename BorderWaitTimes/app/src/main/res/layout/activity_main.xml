@@ -24,18 +24,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="-------------DELAY FOR-------------"
+        android:text="----------RECOMMENDED----------"
         style="@style/headerText"
         android:textSize="20dp"
-        android:id="@+id/delayforBridge"
-        android:layout_below="@+id/my_toolbar"
+        android:id="@+id/Recommended"
+        android:layout_marginTop="1dp"
         android:layout_centerHorizontal="true" />
+
 
     <ImageView
         android:layout_width="1120dp"
-        android:layout_height="288dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
         android:id="@+id/recommendPicture"
-        android:src="@drawable/green" />
+        android:src="@drawable/green"
+        android:layout_below="@+id/my_toolbar"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,60 +49,52 @@
         android:text="Fill in later -- suggested java class"
         android:id="@+id/recommended_bridge"
         android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/delayforBridge"
+        android:layout_below="@+id/Recommended"
+        android:layout_marginTop="35dp"
+        android:layout_alignLeft="@id/recommendPicture"
         android:layout_centerHorizontal="true" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/recommendedDelay"
         android:text="No Delay"
+        android:textSize="30dp"
+        android:gravity="center"
         style="@style/headerText"
-        android:layout_below="@id/recommended_bridge"  />
+        android:layout_alignBottom="@+id/recommendPicture"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="----------RECOMMENDED----------"
+        android:text="-------------DELAY FOR-------------"
         style="@style/headerText"
         android:textSize="20dp"
-        android:id="@+id/Recommended"
-        android:layout_marginTop="120dp"
-        android:layout_below="@+id/delayforBridge"
+        android:layout_below="@id/recommendPicture"
+        android:id="@+id/delayforBridge"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ImageView
+        android:layout_width="1120dp"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:textStyle="bold"
-        style="@style/headerText"
-        android:id="@+id/Bridge_1"
-        android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/Recommended"
-        android:layout_alignStart="@+id/Bridge_3" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="update"
-        android:id="@+id/refreshButton"
-        android:onClick="update"
-        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:id="@+id/delayBridge1"
+        android:src="@drawable/red"
+        android:layout_below="@+id/delayforBridge"
         android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         style="@style/headerText"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/Bridge_2"
+        android:layout_marginTop="7dp"
+        android:id="@+id/Title_Bridge_1"
+        android:text="Placeholder for Bridge1"
         android:layout_gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/Bridge_3" />
+        android:layout_below="@+id/delayforBridge" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -106,12 +102,85 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
-        android:id="@+id/Bridge_3"
+        android:id="@+id/Delay_Rainbow_Textview"
+        android:textSize="30dp"
         android:layout_gravity="center_horizontal"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
+    <ImageView
+        android:layout_width="1120dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:id="@+id/delayBridge2"
+        android:src="@drawable/yellow"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/delayBridge1"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/headerText"
+        android:layout_marginTop="20dp"
+        android:id="@+id/Title_Bridge_2"
+        android:text="Placeholder for Bridge2"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/Delay_Rainbow_Textview" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        style="@style/headerText"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/Delay_Peace_Textview"
+        android:textSize="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/delayBridge2" />
+
+    <ImageView
+        android:layout_width="1120dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:id="@+id/delayBridge3"
+        android:src="@drawable/green"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/delayBridge2"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/headerText"
+        android:layout_marginTop="20dp"
+        android:id="@+id/Title_Bridge_3"
+        android:text="Placeholder for Bridge3"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/Delay_Peace_Textview" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        style="@style/headerText"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/Delay_QL_Textview"
+        android:textSize="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/delayBridge3" />
 
 
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:text="update"
+        android:id="@+id/refreshButton"
+        android:onClick="update"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
