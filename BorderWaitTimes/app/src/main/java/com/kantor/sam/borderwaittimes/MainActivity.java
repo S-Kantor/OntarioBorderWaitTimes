@@ -1,7 +1,6 @@
 package com.kantor.sam.borderwaittimes;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         // Restoring Variables (Last Bridge Time)
         SharedPreferences Bridge_Times = getSharedPreferences(PREFS_NAME, 0);
         Bridge1_Time = Bridge_Times.getString("Bridge_1", Bridge1_Time);
-        Bridge2_Time = Bridge_Times.getString("Bridge_2", Bridge2_Time);
-        Bridge3_Time = Bridge_Times.getString("Bridge_3", Bridge3_Time);
+        Bridge2_Time = Bridge_Times.getString("Delay_Peace_Textview", Bridge2_Time);
+        Bridge3_Time = Bridge_Times.getString("Delay_Rainbow_Textview", Bridge3_Time);
         setBridge1_Time(Bridge1_Time);
         setBridge2_Time(Bridge2_Time);
         setBridge3_Time(Bridge3_Time);
@@ -92,8 +90,8 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("preference_file_name", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("Bridge_1", getBridge1());
-        editor.putString("Bridge_2", getBridge2());
-        editor.putString("Bridge_3", getBridge3());
+        editor.putString("Delay_Peace_Textview", getBridge2());
+        editor.putString("Delay_Rainbow_Textview", getBridge3());
         editor.commit();
     }
 
@@ -104,12 +102,12 @@ public class MainActivity extends AppCompatActivity {
     }
     public String getBridge2()
     {
-        TextView tmp = (TextView)findViewById(R.id.Bridge_2);
+        TextView tmp = (TextView)findViewById(R.id.Delay_Peace_Textview);
         return tmp.toString();
     }
     public String getBridge3()
     {
-        TextView tmp = (TextView)findViewById(R.id.Bridge_3);
+        TextView tmp = (TextView)findViewById(R.id.Delay_Rainbow_Textview);
         return tmp.toString();
     }
     public void setBridge1_Time(String string)
@@ -119,12 +117,12 @@ public class MainActivity extends AppCompatActivity {
     }
     public void setBridge2_Time(String string)
     {
-        TextView tmp = (TextView)findViewById(R.id.Bridge_2);
+        TextView tmp = (TextView)findViewById(R.id.Delay_Peace_Textview);
         tmp.setText(string);
     }
     public void setBridge3_Time(String string)
     {
-        TextView tmp = (TextView)findViewById(R.id.Bridge_3);
+        TextView tmp = (TextView)findViewById(R.id.Delay_Rainbow_Textview);
         tmp.setText(string);
     }
 }
