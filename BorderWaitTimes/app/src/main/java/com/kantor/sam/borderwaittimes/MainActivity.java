@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Restoring Variables (Last Bridge Time)
         SharedPreferences Bridge_Times = getSharedPreferences(PREFS_NAME, 0);
-        Bridge1_Time = Bridge_Times.getString("Bridge_1", Bridge1_Time);
+        Bridge1_Time = Bridge_Times.getString("Delay_QL_Textview", Bridge1_Time);
         Bridge2_Time = Bridge_Times.getString("Delay_Peace_Textview", Bridge2_Time);
         Bridge3_Time = Bridge_Times.getString("Delay_Rainbow_Textview", Bridge3_Time);
         setBridge1_Time(Bridge1_Time);
@@ -77,10 +77,10 @@ public class MainActivity extends AppCompatActivity {
         // Commit Save Changes
         SharedPreferences prefs = getSharedPreferences("preference_file_name", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("Bridge_1", getBridge1());
+        editor.putString("Delay_QL_Textview", getBridge1());
         editor.putString("Delay_Peace_Textview", getBridge2());
         editor.putString("Delay_Rainbow_Textview", getBridge3());
-        editor.commit();
+        editor.apply();
     }
 
     public String getBridge1()
