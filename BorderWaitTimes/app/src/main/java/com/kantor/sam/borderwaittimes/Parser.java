@@ -99,7 +99,7 @@ public class Parser extends AsyncTask <Void, Void, Void>
         }
         else if (status.equals("delay"))
         {
-            return minutes + " minutes";
+            return minutes;
         }
         else
         {
@@ -127,17 +127,17 @@ public class Parser extends AsyncTask <Void, Void, Void>
     {
         super.onPostExecute(result);
         setStatus();
-        Bridge1_time = "Delay for Lewiston Bridge is: " + Bridge1_time;
-        Bridge2_time = "Delay for Peace Bridge is: " + Bridge2_time;
-        Bridge3_time = "Delay for Rainbow Bridge is: " + Bridge3_time;
 
-        TextView textView = (TextView)mActivity.findViewById(R.id.Bridge_1);
+        TextView textView = (TextView)mActivity.findViewById(R.id.Delay_QL_Textview);
         TextView textView2 = (TextView)mActivity.findViewById(R.id.Delay_Peace_Textview);
         TextView textView3 = (TextView)mActivity.findViewById(R.id.Delay_Rainbow_Textview);
 
         textView.setText(Bridge1_time);
         textView2.setText(Bridge2_time);
         textView3.setText(Bridge3_time);
+
+        Display dp = new Display(mActivity);
+        dp.main(textView.getText().toString(), textView2.getText().toString(), textView3.getText().toString());
     }
 
 }
