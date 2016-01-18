@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -17,19 +18,14 @@
         android:layout_height="?attr/actionBarSize"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:layout_alignParentEnd="true" />
 
-    <TextView
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="----------RECOMMENDED----------"
-        style="@style/headerText"
-        android:textSize="20dp"
-        android:id="@+id/Recommended"
-        android:layout_marginTop="1dp"
-        android:layout_centerHorizontal="true" />
+        android:src="@drawable/recommeneded"
+        android:id="@+id/Recommended"/>
 
 
     <ImageView
@@ -43,6 +39,7 @@
 
     <TextView
         android:layout_width="wrap_content"
+        android:layout_marginTop="5dp"
         style="@style/headerText"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -50,7 +47,6 @@
         android:id="@+id/recommended_bridge"
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/Recommended"
-        android:layout_marginTop="35dp"
         android:layout_alignLeft="@id/recommendPicture"
         android:layout_centerHorizontal="true" />
 
@@ -59,23 +55,21 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/recommendedDelay"
+        android:textColor="@color/background"
         android:text="No Delay"
-        android:textSize="30dp"
+        android:layout_marginBottom="13dp"
+        android:textSize="30sp"
         android:gravity="center"
         style="@style/headerText"
         android:layout_alignBottom="@+id/recommendPicture"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="-------------DELAY FOR-------------"
-        style="@style/headerText"
-        android:textSize="20dp"
-        android:layout_below="@id/recommendPicture"
+        android:src="@drawable/delayfor"
         android:id="@+id/delayforBridge"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@id/recommendPicture" />
 
     <ImageView
         android:layout_width="1120dp"
@@ -90,7 +84,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/headerText"
-        android:layout_marginTop="7dp"
         android:id="@+id/Title_Bridge_1"
         android:text="Placeholder for Bridge1"
         android:layout_gravity="center_horizontal"
@@ -102,10 +95,13 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
+        android:textColor="@color/background"
         android:id="@+id/Delay_Rainbow_Textview"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="13dp"
         android:layout_centerVertical="true"
+        android:layout_alignBottom="@+id/delayBridge1"
         android:layout_centerHorizontal="true" />
 
     <ImageView
@@ -121,8 +117,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         style="@style/headerText"
-        android:layout_marginTop="20dp"
         android:id="@+id/Title_Bridge_2"
         android:text="Placeholder for Bridge2"
         android:layout_gravity="center_horizontal"
@@ -134,8 +130,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
+        android:textColor="@color/background"
+        android:layout_marginBottom="13dp"
         android:id="@+id/Delay_Peace_Textview"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:layout_gravity="center_horizontal"
         android:layout_centerHorizontal="true"
         android:layout_alignBottom="@+id/delayBridge2" />
@@ -154,7 +152,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/headerText"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:id="@+id/Title_Bridge_3"
         android:text="Placeholder for Bridge3"
         android:layout_gravity="center_horizontal"
@@ -166,14 +164,15 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
+        android:textColor="@color/background"
         android:id="@+id/Delay_QL_Textview"
-        android:textSize="30dp"
+        android:layout_marginBottom="13dp"
+        android:textSize="30sp"
         android:layout_gravity="center_horizontal"
         android:layout_centerHorizontal="true"
         android:layout_alignBottom="@+id/delayBridge3" />
 
-
-    <android.support.design.widget.FloatingActionButton
+     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="4dp"
