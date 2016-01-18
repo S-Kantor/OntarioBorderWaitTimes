@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -23,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
 
         String Bridge1_Time = "no delay";
         String Bridge2_Time = "no delay";
@@ -53,19 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 .make(this.findViewById(android.R.id.content),  "You clicked a button", Snackbar.LENGTH_LONG);
 
         switch (item.getItemId()) {
-            /*case R.id.queenstonBridgepop:
-                Intent intent = new Intent(this, QueenstonActivity.class);
-                intent.putExtra("Bridge_Time", getBridge1());
-                startActivity(intent);
-                snackbar.show();
-                return true;
-
-            case R.id.rainbowBridgpop:
-                snackbar.show();
-                return true;
-            case R.id.peaceBridgepop:
-                snackbar.show();
-                return true;*/
 
             default:
                 // If we got here, the user's action was not recognized.
@@ -74,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
     public void update (View v) throws Exception
     {
         Parser ps = new Parser(this);
@@ -97,22 +85,22 @@ public class MainActivity extends AppCompatActivity {
 
     public String getBridge1()
     {
-        TextView tmp = (TextView)findViewById(R.id.Bridge_1);
+        TextView tmp = (TextView)findViewById(R.id.Delay_Peace_Textview);
         return tmp.toString();
     }
     public String getBridge2()
     {
-        TextView tmp = (TextView)findViewById(R.id.Delay_Peace_Textview);
+        TextView tmp = (TextView)findViewById(R.id.Delay_Rainbow_Textview);
         return tmp.toString();
     }
     public String getBridge3()
     {
-        TextView tmp = (TextView)findViewById(R.id.Delay_Rainbow_Textview);
+        TextView tmp = (TextView)findViewById(R.id.Delay_QL_Textview);
         return tmp.toString();
     }
     public void setBridge1_Time(String string)
     {
-        TextView tmp = (TextView)findViewById(R.id.Bridge_1);
+        TextView tmp = (TextView)findViewById(R.id.Delay_Rainbow_Textview);
         tmp.setText(string);
     }
     public void setBridge2_Time(String string)
