@@ -1,7 +1,9 @@
 package com.kantor.sam.borderwaittimes;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -49,10 +51,18 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Snackbar snackbar = Snackbar
-                .make(this.findViewById(android.R.id.content),  "You clicked a button", Snackbar.LENGTH_LONG);
 
         switch (item.getItemId()) {
+
+            case R.id.about:
+                Snackbar snackbar = Snackbar
+                        .make(this.findViewById(android.R.id.content),  "Developed by: Sam Kantor", Snackbar.LENGTH_LONG);
+                snackbar.show();
+                return true;
+
+            case R.id.website:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("www.samkantor.me"));
+                startActivity(browserIntent);
 
             default:
                 // If we got here, the user's action was not recognized.
