@@ -43,7 +43,7 @@
         style="@style/headerText"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Fill in later -- suggested java class"
+        android:text="@string/fill_in_later_suggested_java_class"
         android:id="@+id/recommended_bridge"
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/Recommended"
@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         style="@style/headerText"
         android:id="@+id/Title_Bridge_1"
-        android:text="Placeholder for Bridge1"
+        android:text="@string/placeholder_for_bridge1"
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/delayforBridge" />
 
@@ -120,7 +120,7 @@
         android:layout_marginTop="8dp"
         style="@style/headerText"
         android:id="@+id/Title_Bridge_2"
-        android:text="Placeholder for Bridge2"
+        android:text="@string/placeholder_for_bridge2"
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/Delay_Rainbow_Textview" />
 
@@ -154,7 +154,7 @@
         style="@style/headerText"
         android:layout_marginTop="8dp"
         android:id="@+id/Title_Bridge_3"
-        android:text="Placeholder for Bridge3"
+        android:text="@string/placeholder_for_bridge3"
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/Delay_Peace_Textview" />
 
@@ -176,7 +176,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="4dp"
-        android:text="update"
+        android:text="@string/update"
         android:id="@+id/refreshButton"
         android:onClick="update"
         android:layout_alignParentBottom="true"
