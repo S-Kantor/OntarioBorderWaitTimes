@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+    android:id="@+id/queenstonBridgepop"
+    android:icon="@drawable/queestonlewiston"
+    android:title="@string/queenPopup"
+    app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/peaceBridgepop"
+        android:icon="@drawable/peacebridge"
+        android:title="@string/peacePopup"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/rainbowBridgpop"
+        android:icon="@drawable/rainbowbridge1"
+        android:title="@string/rainbowPopup"
+        app:showAsAction="never"/>
+</menu>
